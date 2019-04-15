@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from setuptools import find_packages
-from setuptools import setup
+from setuptools import find_packages, setup
+
 from version import __version__
 
 setup(
@@ -45,6 +45,6 @@ setup(
     license='Apache-2.0',
     packages=find_packages(),
     namespace_packages=[],
-    url='https://github.com/census-instrumentation/opencensus-proto/tree/master/gen-python',
+    url='https://github.com/bitrise-io/opencensus-proto/tree/master/gen-python',
     zip_safe=False,
 )

@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.(streaming responses)",
             "schema": {
-              "$ref": "#/definitions/v1ExportTraceServiceResponse"
+              "$ref": "#/x-stream-definitions/v1ExportTraceServiceResponse"
             }
           }
         },
@@ -80,7 +80,7 @@
             "$ref": "#/definitions/v1AttributeValue"
           },
           "description": "\"/http/user_agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36\"\n    \"/http/server_latency\": 300\n    \"abc.com/myattribute\": true\n    \"abc.com/score\": 10.239",
-          "title": "The set of attributes. The value can be a string, an integer, a double\nor the Boolean values `true` or `false`. Note, global attributes like \nserver name can be set as tags using resource API. Examples of attributes:"
+          "title": "The set of attributes. The value can be a string, an integer, a double\nor the Boolean values `true` or `false`. Note, global attributes like\nserver name can be set as tags using resource API. Examples of attributes:"
         },
         "dropped_attributes_count": {
           "type": "integer",
@@ -96,7 +96,7 @@
         "trace_id": {
           "type": "string",
           "format": "byte",
-          "description": "A unique identifier of a trace that this linked span is part of. The ID is a \n16-byte array."
+          "description": "A unique identifier of a trace that this linked span is part of. The ID is a\n16-byte array."
         },
         "span_id": {
           "type": "string",
@@ -110,6 +110,10 @@
         "attributes": {
           "$ref": "#/definitions/SpanAttributes",
           "description": "A set of attributes on the link."
+        },
+        "tracestate": {
+          "$ref": "#/definitions/SpanTracestate",
+          "description": "The Tracestate associated with the link."
         }
       },
       "description": "A pointer from the current span to another span in the same trace or in a\ndifferent trace. For example, this can be used in batching operations,\nwhere a single batch handler processes multiple requests from different\ntraces or when the handler receives a request from a different project."
@@ -320,6 +324,43 @@
         "value": {
           "type": "string",
           "description": "The value is opaque string up to 256 characters printable ASCII\nRFC0020 characters (i.e., the range 0x20 to 0x7E) except ',' and '='.\nNote that this also excludes tabs, newlines, carriage returns, etc."
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "runtimeStreamError": {
+      "type": "object",
+      "properties": {
+        "grpc_code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "http_code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "http_status": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
         }
       }
     },
@@ -568,7 +609,7 @@
         },
         "resource": {
           "$ref": "#/definitions/v1Resource",
-          "description": "An optional resource that is associated with this span. If not set, this span \nshould be part of a batch that does include the resource information, unless resource \ninformation is unknown."
+          "description": "An optional resource that is associated with this span. If not set, this span\nshould be part of a batch that does include the resource information, unless resource\ninformation is unknown."
         },
         "same_process_as_parent_span": {
           "type": "boolean",
@@ -675,6 +716,32 @@
           "description": "Requested updated configuration."
         }
       }
+    }
+  },
+  "x-stream-definitions": {
+    "v1ExportTraceServiceResponse": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1ExportTraceServiceResponse"
+        },
+        "error": {
+          "$ref": "#/definitions/runtimeStreamError"
+        }
+      },
+      "title": "Stream result of v1ExportTraceServiceResponse"
+    },
+    "v1UpdatedLibraryConfig": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "$ref": "#/definitions/v1UpdatedLibraryConfig"
+        },
+        "error": {
+          "$ref": "#/definitions/runtimeStreamError"
+        }
+      },
+      "title": "Stream result of v1UpdatedLibraryConfig"
     }
   }
 }

@@ -140,12 +140,12 @@ uploadArchives {
                     name "OpenCensus"
                     packaging 'jar'
                     description project.description
-                    url 'https://github.com/census-instrumentation/opencensus-proto'
+                    url 'https://github.com/bitrise-io/opencensus-proto'
 
                     scm {
-                        connection 'scm:svn:https://github.com/census-instrumentation/opencensus-proto'
-                        developerConnection 'scm:git:git@github.com/census-instrumentation/opencensus-proto'
-                        url 'https://github.com/census-instrumentation/opencensus-proto'
+                        connection 'scm:svn:https://github.com/bitrise-io/opencensus-proto'
+                        developerConnection 'scm:git:git@github.com/bitrise-io/opencensus-proto'
+                        url 'https://github.com/bitrise-io/opencensus-proto'
                     }
 
                     licenses {

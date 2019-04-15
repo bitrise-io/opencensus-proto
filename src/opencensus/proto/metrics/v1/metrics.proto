@@ -14,7 +14,7 @@
 
 // This package describes the Metrics data model. It is currently experimental
 // but may eventually become the wire format for metrics. Please see
-// https://github.com/census-instrumentation/opencensus-specs/blob/master/stats/Metrics.md
+// https://github.com/bitrise-io/opencensus-specs/blob/master/stats/Metrics.md
 // for more details.
 
 syntax = "proto3";
@@ -25,7 +25,7 @@ import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 import "opencensus/proto/resource/v1/resource.proto";
 
-option go_package = "github.com/census-instrumentation/opencensus-proto/gen-go/metrics/v1";
+option go_package = "github.com/bitrise-io/opencensus-proto/gen-go/metrics/v1";
 
 option java_multiple_files = true;
 option java_package = "io.opencensus.proto.metrics.v1";
@@ -300,4 +300,3 @@ message SummaryValue {
   // Values calculated over an arbitrary time window.
   Snapshot snapshot = 3;
 }
-

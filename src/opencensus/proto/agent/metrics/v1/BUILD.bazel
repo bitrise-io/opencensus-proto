@@ -46,7 +46,7 @@ java_grpc_library(
 go_proto_library(
     name = "metrics_service_proto_go",
     proto = ":metrics_service_proto",
-    importpath = "github.com/census-instrumentation/opencensus-proto/gen-go/agent/metrics/v1",
+    importpath = "github.com/bitrise-io/opencensus-proto/gen-go/agent/metrics/v1",
     deps = [
         "//opencensus/proto/agent/common/v1:common_proto_go",
         "//opencensus/proto/metrics/v1:metrics_proto_go",

@@ -2,7 +2,7 @@
 
 This package describes the OpenCensus Agent protocol. For the architecture and implementation of
 OpenCensus Agent, please refer to the specs in
-[OpenCensus-Service](https://github.com/census-instrumentation/opencensus-service#opencensus-agent).
+[OpenCensus-Service](https://github.com/bitrise.io/opencensus-service#opencensus-agent).
 
 ## Packages
 

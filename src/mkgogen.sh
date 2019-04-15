@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Run this if opencensus-proto is checked in the GOPATH.
-# go get -d github.com/census-instrumentation/opencensus-proto
+# go get -d github.com/bitrise.io/opencensus-proto
 # to check in the repo to the GOAPTH.
 #
 # This also requires the grpc-gateway plugin.

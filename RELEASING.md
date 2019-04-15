@@ -17,7 +17,7 @@ Follow the instructions [here](http://google.github.io/proto-lens/installing-pro
 Then run the following commands to re-generate the gen-go files:
 
 ```bash
-$ cd $(go env GOPATH)/src/github.com/census-instrumentation/opencensus-proto
+$ cd $(go env GOPATH)/src/github.com/bitrise-io/opencensus-proto
 $ git checkout -b update-gen-go
 $ rm -rf gen-go
 $ cd src
@@ -177,7 +177,7 @@ from the project.
 ### Prerequisites
 
 If you haven't done already, please follow the instructions
-[here](https://github.com/census-instrumentation/opencensus-java/blob/master/RELEASING.md#prerequisites)
+[here](https://github.com/bitrise-io/opencensus-java/blob/master/RELEASING.md#prerequisites)
 to set up the OSSRH (OSS Repository Hosting) account and signing keys. This is required for releasing
 to Maven Central.
 
@@ -252,11 +252,11 @@ $ python3 -m twine upload dist/*
 ## Announcement
 
 Once deployment is done, go to Github [release
-page](https://github.com/census-instrumentation/opencensus-proto/releases), press
+page](https://github.com/bitrise-io/opencensus-proto/releases), press
 `Draft a new release` to write release notes about the new release.
 
 You can use `git log upstream/v$MAJOR.$((MINOR-1)).x..upstream/v$MAJOR.$MINOR.x --graph --first-parent`
-or the Github [compare tool](https://github.com/census-instrumentation/opencensus-proto/compare/)
+or the Github [compare tool](https://github.com/bitrise-io/opencensus-proto/compare/)
 to view a summary of all commits since last release as a reference.
 
 Please pick major or important user-visible changes only.

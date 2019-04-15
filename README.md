@@ -19,12 +19,12 @@ consistency and interoperability for the different implementations.
 ### Install to Go
 
 ```bash
-$ go get -u github.com/census-instrumentation/opencensus-proto
+$ go get -u github.com/bitrise-io/opencensus-proto
 ```
 
 In most cases you should depend on the gen-go files directly. If you are
 building with Bazel, there are also go_proto_library build rules available.
-See [PR/132](https://github.com/census-instrumentation/opencensus-proto/pull/132)
+See [PR/132](https://github.com/bitrise-io/opencensus-proto/pull/132)
 for details. However, please note that Bazel doesn't generate the final
 artifacts.
 
@@ -52,8 +52,8 @@ compile 'io.opencensus:opencensus-proto:0.2.0'
 [gitter-url]: https://gitter.im/census-instrumentation/lobby
 [javadoc-image]: https://www.javadoc.io/badge/io.opencensus/opencensus-proto.svg
 [javadoc-url]: https://www.javadoc.io/doc/io.opencensus/opencensus-proto
-[godoc-image]: https://godoc.org/github.com/census-instrumentation/opencensus-proto?status.svg
-[godoc-url]: https://godoc.org/github.com/census-instrumentation/opencensus-proto
+[godoc-image]: https://godoc.org/github.com/bitrise-io/opencensus-proto?status.svg
+[godoc-url]: https://godoc.org/github.com/bitrise-io/opencensus-proto
 [pypi-image]: https://badge.fury.io/py/opencensus-proto.svg
 [pypi-url]: https://pypi.org/project/opencensus-proto/
 
@@ -65,7 +65,7 @@ git_repository(
     name = "io_opencensus_proto",
     strip_prefix = "src",
     tag = "v0.2.0", # CURRENT_OPENCENSUS_PROTO_VERSION
-    remote = "https://github.com/census-instrumentation/opencensus-proto",
+    remote = "https://github.com/bitrise-io/opencensus-proto",
 )
 ```
 or
@@ -74,7 +74,7 @@ or
 http_archive(
     name = "io_opencensus_proto",
     strip_prefix = "opencensus-proto-master/src",
-    urls = ["https://github.com/census-instrumentation/opencensus-proto/archive/master.zip"],
+    urls = ["https://github.com/bitrise-io/opencensus-proto/archive/master.zip"],
 )
 ```
 
